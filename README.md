@@ -31,6 +31,12 @@ Password or token に先ほどのトークンを入力し、log in
 ブラウザでquitまたはターミナルでCtrl+Cで終了
 
 
+### DockerでGPU利用、フォルダをマウント
+``` bash
+docker run -it --rm --gpus '"device=n"' -v $HOME:/tf/home -p xxxx:8888  tensorflow/tensorflow:latest-gpu-jupyter
+```
+
+
 ### Dockerfile から build
 
 ``` bash
@@ -38,10 +44,6 @@ docker build -t abc:xyz .
 ```
 abc:xyz イメージ名:タグ名
 
-### DockerでGPU利用、フォルダをマウント
-``` bash
-docker run -it --rm --gpus '"device=n"' -v $HOME:/tf/home -p xxxx:8888  abc:xyz
-```
 
 ### docker環境に入る
 ``` bash
